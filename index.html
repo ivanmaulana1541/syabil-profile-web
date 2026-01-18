@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- HERO -->
   <header class="hero">
     <div class="hero-inner">
       <h1>Syabil</h1>
@@ -16,8 +15,7 @@
     </div>
   </header>
 
-  <!-- ABOUT -->
-  <section class="about fade-in">
+  <section class="about">
     <div class="about-inner">
       <h2>Tentang</h2>
       <p>
@@ -29,48 +27,47 @@
     </div>
   </section>
 
-  <!-- GALLERY -->
-  <main class="container fade-in">
+  <main class="container">
     <h2>Galeri Foto</h2>
 
     <div class="gallery">
 
-      <figure class="gallery-item fade-in">
+      <figure class="gallery-item">
         <img src="assets/photos/photo-01.jpg" alt="Syabil">
         <figcaption>Tertidur tenang di tengah perjalanan</figcaption>
       </figure>
 
-      <figure class="gallery-item fade-in">
+      <figure class="gallery-item">
         <img src="assets/photos/photo-02.jpg" alt="Syabil">
         <figcaption>Senyum kecil di momen yang sederhana</figcaption>
       </figure>
 
-      <figure class="gallery-item fade-in">
+      <figure class="gallery-item">
         <img src="assets/photos/photo-03.jpg" alt="Syabil">
         <figcaption>Pagi yang cerah dan penuh rasa ingin tahu</figcaption>
       </figure>
 
-      <figure class="gallery-item fade-in">
+      <figure class="gallery-item">
         <img src="assets/photos/photo-04.jpg" alt="Syabil">
         <figcaption>Wajah tenang di suasana yang hangat</figcaption>
       </figure>
 
-      <figure class="gallery-item fade-in">
+      <figure class="gallery-item">
         <img src="assets/photos/photo-05.jpg" alt="Syabil">
         <figcaption>Ekspresi polos yang sulit dilupakan</figcaption>
       </figure>
 
-      <figure class="gallery-item fade-in">
+      <figure class="gallery-item">
         <img src="assets/photos/photo-06.jpg" alt="Syabil">
         <figcaption>Momen kecil di hari yang sederhana</figcaption>
       </figure>
 
-      <figure class="gallery-item fade-in">
+      <figure class="gallery-item">
         <img src="assets/photos/photo-07.jpg" alt="Syabil">
         <figcaption>Diam, mengamati dunia dengan caranya sendiri</figcaption>
       </figure>
 
-      <figure class="gallery-item fade-in">
+      <figure class="gallery-item">
         <img src="assets/photos/photo-08.jpg" alt="Syabil">
         <figcaption>Penutup hari dengan ketenangan</figcaption>
       </figure>
@@ -78,18 +75,15 @@
     </div>
   </main>
 
-  <!-- FOOTER -->
   <footer>
     Made with ❤️ by Dad
   </footer>
 
-  <!-- LIGHTBOX -->
   <div id="lightbox" class="lightbox">
     <span class="close">&times;</span>
-    <img id="lightbox-img" class="lightbox-img" src="" alt="Preview">
+    <img id="lightbox-img" class="lightbox-img" src="">
   </div>
 
-  <!-- LIGHTBOX SCRIPT -->
   <script>
     const images = document.querySelectorAll('.gallery img');
     const lightbox = document.getElementById('lightbox');
@@ -97,40 +91,21 @@
     const closeBtn = document.querySelector('.lightbox .close');
 
     images.forEach(img => {
-      img.addEventListener('click', () => {
+      img.onclick = () => {
         lightboxImg.src = img.src;
         lightbox.classList.add('show');
-      });
+      };
     });
 
-    closeBtn.addEventListener('click', () => {
+    closeBtn.onclick = () => {
       lightbox.classList.remove('show');
-    });
+    };
 
-    lightbox.addEventListener('click', e => {
+    lightbox.onclick = e => {
       if (e.target === lightbox) {
         lightbox.classList.remove('show');
       }
-    });
-  </script>
-
-  <!-- FADE-IN -->
-  <script>
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    document.querySelectorAll('.fade-in').forEach(el => {
-      observer.observe(el);
-    });
+    };
   </script>
 
 </body>
