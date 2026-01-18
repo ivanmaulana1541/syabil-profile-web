@@ -35,49 +35,49 @@
 
     <div class="gallery">
       <figure class="gallery-item fade-in">
-        <img src="assets/photos/photo-01.jpg" alt="Syabil photo">
+        <img src="assets/photos/photo-01.jpg" alt="Syabil">
         <figcaption>Tertidur tenang di tengah perjalanan</figcaption>
       </figure>
 
       <figure class="gallery-item fade-in">
-        <img src="assets/photos/photo-02.jpg" alt="Syabil photo">
+        <img src="assets/photos/photo-02.jpg" alt="Syabil">
         <figcaption>Senyum kecil di momen yang sederhana</figcaption>
       </figure>
 
       <figure class="gallery-item fade-in">
-        <img src="assets/photos/photo-03.jpg" alt="Syabil photo">
+        <img src="assets/photos/photo-03.jpg" alt="Syabil">
         <figcaption>Pagi yang cerah dan penuh rasa ingin tahu</figcaption>
       </figure>
 
       <figure class="gallery-item fade-in">
-        <img src="assets/photos/photo-04.jpg" alt="Syabil photo">
+        <img src="assets/photos/photo-04.jpg" alt="Syabil">
         <figcaption>Wajah tenang di suasana yang hangat</figcaption>
       </figure>
 
       <figure class="gallery-item fade-in">
-        <img src="assets/photos/photo-05.jpg" alt="Syabil photo">
+        <img src="assets/photos/photo-05.jpg" alt="Syabil">
         <figcaption>Ekspresi polos yang sulit dilupakan</figcaption>
       </figure>
 
       <figure class="gallery-item fade-in">
-        <img src="assets/photos/photo-06.jpg" alt="Syabil photo">
+        <img src="assets/photos/photo-06.jpg" alt="Syabil">
         <figcaption>Momen kecil di hari yang sederhana</figcaption>
       </figure>
 
       <figure class="gallery-item fade-in">
-        <img src="assets/photos/photo-07.jpg" alt="Syabil photo">
+        <img src="assets/photos/photo-07.jpg" alt="Syabil">
         <figcaption>Diam, mengamati dunia dengan caranya sendiri</figcaption>
       </figure>
 
       <figure class="gallery-item fade-in">
-        <img src="assets/photos/photo-08.jpg" alt="Syabil photo">
+        <img src="assets/photos/photo-08.jpg" alt="Syabil">
         <figcaption>Penutup hari dengan ketenangan</figcaption>
       </figure>
     </div>
   </main>
 
   <!-- SOCIAL -->
-  <section class="social fade-in">
+  <section class="social">
     <div class="social-inner">
       <p class="social-text">
         Sebagian cerita Syabil berlanjut di luar halaman ini.  
@@ -89,14 +89,14 @@
            href="https://www.instagram.com/kiandra.aldeera.syabil?igsh=NTBoYWtlejdnZjE0"
            target="_blank" rel="noopener">
           <span class="icon">📸</span>
-          <span>Instagram Syabil</span>
+          Instagram Syabil
         </a>
 
         <a class="social-btn youtube"
            href="https://www.youtube.com/@AldeeraEscapes"
            target="_blank" rel="noopener">
           <span class="icon">▶️</span>
-          <span>YouTube Syabil</span>
+          YouTube Syabil
         </a>
       </div>
     </div>
@@ -110,15 +110,14 @@
   <!-- LIGHTBOX -->
   <div id="lightbox" class="lightbox">
     <span class="close">&times;</span>
-    <img class="lightbox-img" id="lightbox-img" alt="Preview">
+    <img id="lightbox-img" class="lightbox-img" alt="Preview">
   </div>
 
-  <!-- SCRIPTS -->
+  <!-- LIGHTBOX SCRIPT -->
   <script>
     const images = document.querySelectorAll('.gallery img');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn = document.querySelector('.lightbox .close');
 
     images.forEach(img => {
       img.addEventListener('click', () => {
@@ -127,14 +126,13 @@
       });
     });
 
-    closeBtn.addEventListener('click', () => {
+    lightbox.addEventListener('click', () => {
       lightbox.classList.remove('show');
     });
+  </script>
 
-    lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) lightbox.classList.remove('show');
-    });
-
+  <!-- FADE IN -->
+  <script>
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
