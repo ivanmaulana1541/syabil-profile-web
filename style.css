@@ -1,11 +1,12 @@
-/* RESET */
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  color: #111827;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background: #ffffff;
+  color: #111827;
 }
 
 /* HERO */
@@ -15,12 +16,12 @@ body {
   align-items: center;
   justify-content: center;
   background: #0f172a;
-  color: #fff;
+  color: #ffffff;
 }
 
 .hero-inner {
   text-align: center;
-  max-width: 720px;
+  max-width: 700px;
   padding: 20px;
 }
 
@@ -36,13 +37,13 @@ body {
 
 /* ABOUT */
 .about {
-  padding: 120px 24px;
-  text-align: center;
+  padding: 140px 24px;
 }
 
 .about-inner {
-  max-width: 720px;
+  max-width: 700px;
   margin: auto;
+  text-align: center;
 }
 
 .about h2 {
@@ -71,22 +72,20 @@ body {
 /* GALLERY */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 36px;
 }
 
 .gallery-item img {
   width: 100%;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
   border-radius: 18px;
   cursor: zoom-in;
-  transition: transform .4s ease, box-shadow .4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .gallery-item img:hover {
   transform: scale(1.04);
-  box-shadow: 0 20px 40px rgba(0,0,0,.25);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
 }
 
 .gallery-item figcaption {
@@ -98,7 +97,7 @@ body {
 
 /* SOCIAL */
 .social {
-  padding: 120px 24px 80px;
+  padding: 120px 24px;
   background: #fafafa;
 }
 
@@ -110,36 +109,49 @@ body {
 
 .social-text {
   font-size: 18px;
-  margin-bottom: 40px;
+  margin-bottom: 48px;
 }
 
 .social-buttons {
   display: flex;
-  gap: 24px;
   justify-content: center;
+  gap: 28px;
   flex-wrap: wrap;
 }
 
 .social-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding: 14px 22px;
+  gap: 14px;
+  padding: 14px 26px;
   border-radius: 999px;
+  background: #ffffff;
   border: 1px solid #e5e7eb;
-  background: #fff;
-  text-decoration: none;
   color: #111827;
-  transition: transform .25s ease, box-shadow .25s ease;
+  text-decoration: none;
+  transition: all 0.25s ease;
 }
 
 .social-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0,0,0,.15);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.18);
 }
 
-.social-btn.instagram:hover { border-color: #e1306c; }
-.social-btn.youtube:hover { border-color: #ff0000; }
+.social-btn .icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.social-btn.instagram:hover {
+  color: #e1306c;
+  border-color: #e1306c;
+}
+
+.social-btn.youtube:hover {
+  color: #ff0000;
+  border-color: #ff0000;
+}
 
 /* FOOTER */
 footer {
@@ -153,13 +165,13 @@ footer {
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.85);
+  background: rgba(0,0,0,0.85);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: .3s;
+  transition: opacity 0.3s ease;
 }
 
 .lightbox.show {
@@ -178,15 +190,15 @@ footer {
   top: 24px;
   right: 32px;
   font-size: 42px;
-  color: #fff;
+  color: white;
   cursor: pointer;
 }
 
-/* FADE */
+/* FADE IN */
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
-  transition: .8s ease;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .fade-in.show {
@@ -196,6 +208,7 @@ footer {
 
 /* MOBILE */
 @media (max-width: 600px) {
-  .hero h1 { font-size: 42px; }
-  .hero p { font-size: 16px; }
+  .hero h1 {
+    font-size: 42px;
+  }
 }
