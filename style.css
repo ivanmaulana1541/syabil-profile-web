@@ -92,3 +92,6 @@ p {
   cursor: pointer;
   user-select: none;
 }
+.photo-grid img {
+  cursor: zoom-in;
+}
