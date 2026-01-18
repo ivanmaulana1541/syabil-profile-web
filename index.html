@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <title>Syabil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <!-- HERO SECTION -->
-  <div class="hero">
-    <h1>Syabil</h1>
-    <p>A collection of little moments, smiles, and memories 🤍</p>
-  </div>
+  <header class="hero">
+    <div class="hero-inner">
+      <h1>Syabil</h1>
+      <p>A quiet collection of little moments and memories</p>
+    </div>
+  </header>
 
-  <!-- MAIN CONTENT -->
-  <div class="container fade-in">
+  <!-- PHOTO GALLERY -->
+  <main class="container fade-in">
     <h2>Photo Gallery</h2>
 
     <div class="photo-grid">
@@ -28,56 +31,62 @@
         <figcaption>A gentle smile in quiet moments</figcaption>
       </figure>
     </div>
-  </div>
+  </main>
 
   <!-- FOOTER -->
   <footer>
     Made with ❤️ by Dad
   </footer>
-<!-- LIGHTBOX -->
-<div id="lightbox" class="lightbox">
-  <span class="close">&times;</span>
-  <img class="lightbox-img" id="lightbox-img" src="" alt="Preview">
-</div>
 
-<script>
-  const images = document.querySelectorAll('.photo-grid img');
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const closeBtn = document.querySelector('.lightbox .close');
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="Preview">
+  </div>
 
-  images.forEach(img => {
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightbox.classList.add('show');
+  <!-- LIGHTBOX SCRIPT -->
+  <script>
+    const images = document.querySelectorAll('.photo-grid img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox .close');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('show');
+      });
     });
-  });
 
-  closeBtn.addEventListener('click', () => {
-    lightbox.classList.remove('show');
-  });
-
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
+    closeBtn.addEventListener('click', () => {
       lightbox.classList.remove('show');
-    }
-  });
-</script>
-<script>
-  const fadeElements = document.querySelectorAll('.fade-in');
+    });
 
-  const onScroll = () => {
-    fadeElements.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 50) {
-        el.classList.add('show');
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('show');
       }
     });
-  };
+  </script>
 
-  window.addEventListener('scroll', onScroll);
-  window.addEventListener('load', onScroll);
-</script>
+  <!-- FADE-IN ON SCROLL (STABLE VERSION) -->
+  <script>
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 
 </body>
 </html>
