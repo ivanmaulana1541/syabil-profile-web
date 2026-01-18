@@ -29,17 +29,17 @@
     </div>
   </section>
 
-  <!-- PHOTO GALLERY -->
+  <!-- PHOTO GALLERY (EDITORIAL STYLE) -->
   <main class="container fade-in">
     <h2>Galeri Foto</h2>
 
-    <div class="photo-grid">
-      <figure class="fade-in">
+    <div class="gallery">
+      <figure class="gallery-item fade-in">
         <img src="assets/photos/Syabil-1.jpg" alt="Syabil photo">
         <figcaption>Tertidur tenang di tengah perjalanan</figcaption>
       </figure>
 
-      <figure class="fade-in">
+      <figure class="gallery-item fade-in">
         <img src="assets/photos/Syabil-2.jpg" alt="Syabil photo">
         <figcaption>Senyum kecil di momen yang sederhana</figcaption>
       </figure>
@@ -59,7 +59,7 @@
 
   <!-- LIGHTBOX SCRIPT -->
   <script>
-    const images = document.querySelectorAll('.photo-grid img');
+    const images = document.querySelectorAll('.gallery img');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const closeBtn = document.querySelector('.lightbox .close');
