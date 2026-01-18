@@ -8,14 +8,27 @@
 </head>
 <body>
 
-  <header class="hero">
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo">Syabil</a>
+      <div class="nav-links">
+        <a href="#about">Tentang</a>
+        <a href="#gallery">Galeri</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="home">
     <div class="hero-inner">
       <h1>Syabil</h1>
       <p>Kumpulan momen kecil dan kenangan yang tumbuh seiring waktu</p>
     </div>
   </header>
 
-  <section class="about">
+  <!-- ABOUT -->
+  <section class="about" id="about">
     <div class="about-inner">
       <h2>Tentang</h2>
       <p>
@@ -27,7 +40,8 @@
     </div>
   </section>
 
-  <main class="container">
+  <!-- GALLERY -->
+  <main class="container" id="gallery">
     <h2>Galeri Foto</h2>
 
     <div class="gallery">
@@ -75,15 +89,18 @@
     </div>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     Made with ❤️ by Dad
   </footer>
 
+  <!-- LIGHTBOX -->
   <div id="lightbox" class="lightbox">
     <span class="close">&times;</span>
     <img id="lightbox-img" class="lightbox-img" src="">
   </div>
 
+  <!-- LIGHTBOX SCRIPT -->
   <script>
     const images = document.querySelectorAll('.gallery img');
     const lightbox = document.getElementById('lightbox');
