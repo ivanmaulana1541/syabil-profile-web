@@ -16,13 +16,13 @@
     </div>
   </header>
 
-  <!-- TENTANG -->
+  <!-- ABOUT -->
   <section class="about fade-in">
     <div class="about-inner">
       <h2>Tentang</h2>
       <p>
-        Website ini dibuat sebagai ruang pribadi untuk menyimpan dan
-        mengingat momen-momen kecil dalam perjalanan tumbuh Syabil.
+        Website ini dibuat sebagai ruang pribadi untuk menyimpan dan mengingat
+        momen-momen kecil dalam perjalanan tumbuh Syabil.
         Sebuah pengingat bahwa waktu berjalan cepat,
         dan kenangan layak memiliki tempatnya sendiri.
       </p>
@@ -33,110 +33,97 @@
   <section class="note fade-in">
     <div class="note-inner">
       <h2>Catatan Ayah</h2>
-
       <p>
         Tidak semua hari diingat lewat foto.<br>
         Beberapa hanya tersimpan dalam rasa lelah, tawa kecil, dan diam.
       </p>
-
       <p>
         Website ini dibuat sebagai caraku mengingat bahwa pernah ada fase hidup
         yang begitu sederhana, namun begitu berarti.
       </p>
-
-      <p class="note-sign">
+      <p class="note-end">
         Jika suatu hari kamu membaca ini, semoga kamu tahu:<br>
         kamu dicintai, bahkan di hari-hari yang tak terdokumentasi.
       </p>
     </div>
   </section>
 
-  <!-- GALERI FOTO -->
+  <!-- SOCIAL LINKS -->
+  <section class="social fade-in">
+    <div class="social-inner">
+      <p class="social-text">
+        Sebagian cerita Syabil berlanjut di luar halaman ini.
+        Jika suatu hari kamu ingin melihatnya, ia ada di sana.
+      </p>
+
+      <div class="social-links">
+        <a href="https://www.instagram.com/kiandra.aldeera.syabil?igsh=NTBoYWtlejdnZjE0"
+           target="_blank" aria-label="Instagram Syabil">
+          <!-- Instagram SVG -->
+          <svg viewBox="0 0 24 24">
+            <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 5a5 5 0 100 10 5 5 0 000-10zm6.5-.5a1 1 0 11-2 0 1 1 0 012 0z"/>
+          </svg>
+          <span>Instagram</span>
+        </a>
+
+        <a href="https://www.youtube.com/@AldeeraEscapes"
+           target="_blank" aria-label="YouTube Syabil">
+          <!-- YouTube SVG -->
+          <svg viewBox="0 0 24 24">
+            <path d="M23 12s0-4-1-5-5-1-10-1-9 0-10 1-1 5-1 5 0 4 1 5 5 1 10 1 9 0 10-1 1-5 1-5zm-13 3V9l6 3-6 3z"/>
+          </svg>
+          <span>YouTube</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
   <main class="container fade-in">
     <h2>Galeri Foto</h2>
 
     <div class="gallery">
-
       <figure class="gallery-item fade-in">
-        <img src="assets/photos/photo-01.jpg" alt="Syabil">
+        <img src="assets/photos/photo-01.jpg" alt="">
         <figcaption>Tertidur tenang di tengah perjalanan</figcaption>
       </figure>
-
       <figure class="gallery-item fade-in">
-        <img src="assets/photos/photo-02.jpg" alt="Syabil">
+        <img src="assets/photos/photo-02.jpg" alt="">
         <figcaption>Senyum kecil di momen yang sederhana</figcaption>
       </figure>
-
       <figure class="gallery-item fade-in">
-        <img src="assets/photos/photo-03.jpg" alt="Syabil">
+        <img src="assets/photos/photo-03.jpg" alt="">
         <figcaption>Pagi yang cerah dan penuh rasa ingin tahu</figcaption>
       </figure>
-
       <figure class="gallery-item fade-in">
-        <img src="assets/photos/photo-04.jpg" alt="Syabil">
+        <img src="assets/photos/photo-04.jpg" alt="">
         <figcaption>Wajah tenang di suasana yang hangat</figcaption>
       </figure>
-
       <figure class="gallery-item fade-in">
-        <img src="assets/photos/photo-05.jpg" alt="Syabil">
+        <img src="assets/photos/photo-05.jpg" alt="">
         <figcaption>Ekspresi polos yang sulit dilupakan</figcaption>
       </figure>
-
       <figure class="gallery-item fade-in">
-        <img src="assets/photos/photo-06.jpg" alt="Syabil">
+        <img src="assets/photos/photo-06.jpg" alt="">
         <figcaption>Momen kecil di hari yang sederhana</figcaption>
       </figure>
-
       <figure class="gallery-item fade-in">
-        <img src="assets/photos/photo-07.jpg" alt="Syabil">
+        <img src="assets/photos/photo-07.jpg" alt="">
         <figcaption>Diam, mengamati dunia dengan caranya sendiri</figcaption>
       </figure>
-
       <figure class="gallery-item fade-in">
-        <img src="assets/photos/photo-08.jpg" alt="Syabil">
+        <img src="assets/photos/photo-08.jpg" alt="">
         <figcaption>Penutup hari dengan ketenangan</figcaption>
       </figure>
-
     </div>
   </main>
 
-  <!-- FOOTER -->
   <footer>
     Made with ❤️ by Dad
   </footer>
 
-  <!-- LIGHTBOX -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img id="lightbox-img" class="lightbox-img" alt="Preview">
-  </div>
-
-  <!-- SCRIPT -->
+  <!-- FADE IN -->
   <script>
-    // LIGHTBOX
-    const images = document.querySelectorAll('.gallery img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const closeBtn = document.querySelector('.lightbox .close');
-
-    images.forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.classList.add('show');
-      });
-    });
-
-    closeBtn.addEventListener('click', () => {
-      lightbox.classList.remove('show');
-    });
-
-    lightbox.addEventListener('click', e => {
-      if (e.target === lightbox) {
-        lightbox.classList.remove('show');
-      }
-    });
-
-    // FADE IN
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
