@@ -222,3 +222,13 @@ footer {
     padding: 100px 20px;
   }
 }
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .gallery-item {
+    grid-column: span 1;
+  }
+}
