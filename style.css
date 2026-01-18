@@ -1,256 +1,152 @@
-/* =========================
-   RESET & BASE
-========================= */
+* { box-sizing: border-box; }
 
-* {
-  box-sizing: border-box;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #ffffff;
+  font-family: system-ui, -apple-system, sans-serif;
   color: #111827;
-  line-height: 1.6;
+  background: #ffffff;
 }
 
-h1, h2 {
-  margin: 0;
-  font-weight: 600;
+/* NAV */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(15,23,42,.85);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
 }
-
-p {
-  margin: 0;
+.nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+.nav a {
+  color: #e5e7eb;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 14px;
+}
+.nav-right img {
+  width: 18px;
+  filter: invert(1);
+  opacity: .8;
+}
+.nav-right img:hover { opacity: 1; }
 
-/* =========================
-   HERO SECTION
-========================= */
-
+/* HERO */
 .hero {
   height: 100vh;
+  background: #0f172a;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0f172a;
-  color: #ffffff;
 }
+.hero-inner { text-align: center; }
+.hero h1 { font-size: 64px; margin-bottom: 16px; }
+.hero p { opacity: .8; }
 
-.hero-inner {
+/* ABOUT & NOTE */
+.about, .note {
+  padding: 140px 24px;
   text-align: center;
-  max-width: 700px;
-  padding: 24px;
 }
-
-.hero h1 {
-  font-size: 64px;
-  letter-spacing: -1px;
-  margin-bottom: 16px;
-}
-
-.hero p {
-  font-size: 18px;
-  opacity: 0.85;
-}
-
-/* =========================
-   ABOUT SECTION
-========================= */
-
-.about {
-  background: #f8fafc;
-  padding: 120px 24px;
-}
-
-.about-inner {
+.note { background: #f9fafb; }
+.about-inner, .note-inner {
   max-width: 700px;
   margin: auto;
-  text-align: center;
 }
+.about h2, .note h2 { font-size: 32px; margin-bottom: 32px; }
 
-.about h2 {
-  font-size: 32px;
-  margin-bottom: 32px;
-}
-
-.about p {
-  font-size: 18px;
-  color: #374151;
-  line-height: 1.8;
-}
-
-/* =========================
-   CATATAN AYAH
-========================= */
-
-.note {
-  background: #ffffff;
-  padding: 120px 24px;
-}
-
-.note-inner {
-  max-width: 700px;
-  margin: auto;
-  text-align: center;
-}
-
-.note h2 {
-  font-size: 32px;
-  margin-bottom: 32px;
-}
-
-.note p {
-  font-size: 18px;
-  color: #374151;
-  line-height: 1.8;
-  margin-bottom: 24px;
-}
-
-.note-end {
-  margin-top: 32px;
-  font-style: italic;
-  color: #4b5563;
-}
-
-/* =========================
-   SOCIAL SECTION
-========================= */
-
-.social {
-  background: #0f172a;
-  color: #ffffff;
-  padding: 120px 24px;
-}
-
-.social-inner {
-  max-width: 700px;
-  margin: auto;
-  text-align: center;
-}
-
-.social-text {
-  font-size: 18px;
-  opacity: 0.85;
-  line-height: 1.8;
-  margin-bottom: 48px;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 48px;
-  flex-wrap: wrap;
-}
-
-.social-links a {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 16px;
-  opacity: 0.85;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.social-links a:hover {
-  opacity: 1;
-  transform: translateY(-3px);
-}
-
-.social-links svg {
-  width: 24px;
-  height: 24px;
-  fill: currentColor;
-}
-
-/* =========================
-   GALLERY
-========================= */
-
+/* GALLERY */
 .container {
   max-width: 1100px;
   margin: auto;
   padding: 120px 24px;
 }
-
-.container h2 {
-  font-size: 32px;
-  text-align: center;
-  margin-bottom: 56px;
-}
-
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 48px;
+  grid-template-columns: repeat(auto-fill, minmax(240px,1fr));
+  gap: 32px;
 }
-
-.gallery-item {
-  text-align: center;
-}
-
-.gallery-item img {
+.gallery img {
   width: 100%;
-  border-radius: 18px;
+  border-radius: 16px;
   cursor: zoom-in;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: .4s;
 }
-
-.gallery-item img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+.gallery img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 25px 50px rgba(0,0,0,.25);
 }
-
-.gallery-item figcaption {
-  margin-top: 14px;
+figcaption {
+  margin-top: 12px;
   font-size: 14px;
   color: #6b7280;
+  text-align: center;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* SOCIAL */
+.social {
+  background: #0f172a;
+  color: white;
+  padding: 120px 24px;
+  text-align: center;
+}
+.social-inner { max-width: 700px; margin: auto; }
+.social-links {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+.social-links a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: .85;
+}
+.social-links img { width: 20px; filter: invert(1); }
 
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 48px 20px;
-  font-size: 14px;
+  padding: 40px;
   color: #9ca3af;
 }
 
-/* =========================
-   FADE IN ANIMATION
-========================= */
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+/* LIGHTBOX */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox.show { display: flex; }
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 16px;
+}
+.close {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
 }
 
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 42px;
-  }
-
-  .hero p,
-  .about p,
-  .note p,
-  .social-text {
-    font-size: 16px;
-  }
-
-  .gallery {
-    gap: 32px;
-  }
-}
+/* FADE */
+.fade-in { opacity: 0; transform: translateY(30px); transition: .8s; }
+.fade-in.show { opacity: 1; transform: translateY(0); }
