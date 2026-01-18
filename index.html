@@ -63,6 +63,21 @@
     }
   });
 </script>
+<script>
+  const fadeElements = document.querySelectorAll('.fade-in');
+
+  const onScroll = () => {
+    fadeElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 50) {
+        el.classList.add('show');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', onScroll);
+  window.addEventListener('load', onScroll);
+</script>
 
 </body>
 </html>
